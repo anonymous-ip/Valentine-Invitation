@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 330px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 5px;
+      position: relative;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 BACKGROUND MUSIC -->
+  <!-- Replace the music link if you want -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <!-- 📸 REPLACE THIS IMAGE WITH YOUR PHOTO -->
+    <img src="https://via.placeholder.com/300x180.png?text=Us+%F0%9F%92%95" alt="Our Photo">
+
+    <h2>Will you be my Valentine? 💖</h2>
+
+    <p>
+      I don’t need a special day to choose you…  
+      but today, I just want to ask properly.  
+      Will you be mine? 🥺
+    </p>
+
+    <button id="yes" onclick="yesClicked()">Yes 💘</button>
+    <button id="no" onmouseover="moveNo()" onclick="changeNoText()">No 😭</button>
+  </div>
+
+  <script>
+    let noClicks = 0;
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * 250 - 125;
+      const y = Math.random() * 250 - 125;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function changeNoText() {
+      const noBtn = document.getElementById("no");
+      noClicks++;
+
+      if (noClicks === 1) {
+        noBtn.innerText = "Are you sure? 😢";
+      } else {
+        noBtn.innerText = "You can’t say no 😝";
+      }
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          flex-direction:column;
+          background:linear-gradient(135deg,#ffccd5,#ffe5ec);
+          font-family:Arial;
+          text-align:center;
+        ">
+          <h1 style="color:#d6336c;">YAY!! 💖🥰</h1>
+          <p style="max-width:300px;">
+            You just made my heart so happy.  
+            Thank you for choosing me.  
+            I promise to choose you every day. 💞
+          </p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
